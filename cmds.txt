@@ -5,6 +5,108 @@ docker build -t hello-go .
 
 docker run --name hello-go --rm -p 8180:8180 hello-go
 
+docker ps 
+docker inspect hello-go
+
+https://medium.com/@piteryo7/how-to-set-up-git-server-on-local-network-windows-tutorial-7ec5cd2df3b1
+cd C:\Users\moreilly\Git_server
+
+git init go_hello.git --bare
+
+git config --bool core.bare true
+
 git clone C:\Users\moreilly\Git_server\hello_go.git
 
 git push  C:\Users\moreilly\Git_server\hello_go.git
+
+
+git config receive.denyCurrentBranch updateInstead
+
+
+git init go_hello_deployment.git --bare
+
+
+https://birthday.play-with-docker.com/kubernetes-docker-desktop/
+
+kubectl get nodes
+
+docker container ls
+docker info
+
+
+kubectl create deployment hello-go --image=hello-go
+
+kubectl get deployment hello-go
+
+kubectl get pods
+
+kubectl describe pod hello-go-b6dbd5d87-rmjrq
+
+set KUBE_EDITOR=code -w  ## https://docs.vmware.com/en/VMware-vSphere/7.0/vmware-vsphere-with-tanzu/GUID-DC2BB6E0-A327-4DB8-9A87-5F3376E70033.html
+
+kubectl edit deployment hello-go
+
+kubectl expose deployment hello-go --type=LoadBalancer --port=8180
+
+kubectl get service hello-go
+
+C:\Users\moreilly\Projects\go\hello_go>kubectl get service hello-go
+NAME       TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+hello-go   LoadBalancer   10.97.246.2   localhost     8180:32454/TCP   44s
+
+http://10.97.246.2:32454/test
+
+http://10.97.246.2:8180/test
+
+
+kubectl logs -l app=hello-go
+
+kubectl scale deployments/hello-go --replicas=4
+
+kubectl describe service hello-go
+
+# https://stackoverflow.com/questions/42528409/kubernetes-what-does-unset-mean-in-port-in-a-service
+kubectl edit service hello-go
+
+
+C:\Users\moreilly\Projects\go\hello_go>kubectl describe service hello-go
+Name:                     hello-go
+Namespace:                default
+Labels:                   app=hello-go
+Annotations:              <none>
+Selector:                 app=hello-go
+Type:                     LoadBalancer
+IP:                       10.97.246.2
+LoadBalancer Ingress:     localhost
+Port:                     web-port  8180/TCP
+TargetPort:               8180/TCP
+NodePort:                 web-port  32454/TCP
+Endpoints:                10.1.0.10:8180,10.1.0.7:8180,10.1.0.8:8180 + 1 more...
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+#https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/
+kubectl get pods --selector="app=hello-go" --output=wide
+
+kubectl cluster-info
+Kubernetes master is running at https://kubernetes.docker.internal:6443
+KubeDNS is running at https://kubernetes.docker.internal:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+
+kubectl expose deployment hello-go --type=LoadBalancer --port=8180
+kubectl expose deployment hello-go  --type=NodePort --port=8180 --target-port=8180
+
+
+// Delete the Hello Go Service.
+$ kubectl delete service hello-go
+service "hello-go" deleted
+// Delete the Hello Go Deployment (will also delete associated Pods).
+$ kubectl delete deployment hello-go
+deployment.apps "hello-go" deleted
+
+
+kubectl create deployment hello-go --image=hello-go
+kubectl edit deployment hello-go  (  imagePullPolicy: IfNotPresent )
+kubectl describe service hello-go
+
