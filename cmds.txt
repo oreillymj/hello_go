@@ -1,0 +1,7 @@
+go build cmd/hello/hello.go
+
+docker build -t hello-go .
+
+
+docker run --name hello-go --rm -p 8180:8180 hello-go
+
