@@ -5,3 +5,6 @@ docker build -t hello-go .
 
 docker run --name hello-go --rm -p 8180:8180 hello-go
 
+git clone C:\Users\moreilly\Git_server\hello_go.git
+
+git push  C:\Users\moreilly\Git_server\hello_go.git
