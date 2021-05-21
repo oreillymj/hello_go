@@ -5,10 +5,10 @@
 replicaCount: 4
 
 image:
-  repository: nginx
+  repository: gcr.io/argo-demo-314410/hello-go
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
