@@ -71,8 +71,9 @@ In this example the docker image is deployed in ArgoCD from here - https://gcr.i
 
 # Helm Resources
 https://www.freecodecamp.org/news/helm-charts-tutorial-the-kubernetes-package-manager-explained/
-https://www.baeldung.com/ops/kubernetes-helm 
-https://github.com/argoproj/argocd-example-apps/tree/master/helm-guestbook
+https://github.com/argoproj/argocd-example-apps/tree/master/helm-guestbook/
+https://www.baeldung.com/ops/kubernetes-helm/
+
 
 # Credits
 The original app is based on an example by Jeff Geerling here - https://github.com/geerlingguy/ansible-for-kubernetes/tree/master/hello-go
