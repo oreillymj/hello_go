@@ -1,4 +1,4 @@
-# H1 hello_go
+# hello_go
 A sample hello world Web app written in Go.
 The repo also contains a docker file to build lightweight image based on Alpine. 
 
@@ -10,7 +10,7 @@ cd into cmd the use **go run** or **go build**
 
 You can also build locally and test using docker desktop as follows.
 
-# H2 Building a docker image to run as a container
+# Building a docker image to run as a container
 If you want to build the go app as a docker image use
 
 docker build -t hello-go .
@@ -20,7 +20,7 @@ This will start a webserver on port 8180. In a web browser, access http://localh
 
 Hello, you've requested: /testing
 
-# H2 Deploying into a local Kubernetes install
+# Deploying into a local Kubernetes install
 Docker desktop also installs Kubernetes. Assuming you have an image called hello-go in docker desktop, run the following.
 
 kubectl create deployment hello-go --image=hello-go
@@ -52,7 +52,7 @@ kubectl scale deployments/hello-go --replicas=4
 
 kubectl describe service hello-go
 
-# H2 Building the image in Google Cloud Console and storing to the cloud repo.
+# Building the image in Google Cloud Console and storing to the cloud repo.
 Ensure you have followed the guide to setup up the container registry api in your Google cloud account - https://cloud.google.com/container-registry/docs/quickstart
 Then open a **cloud shell**
 In the example below, I created a project in Google cloud services called **argo-demo**
@@ -65,11 +65,11 @@ docker tag hello-go gcr.io/argo-demo-314410/hello-go:latest
 
 docker push gcr.io/argo-demo-314410/hello-go:latest
 
-# H2 Argo CD setup
+# Argo CD setup
 In this example the docker image is deployed in ArgoCD from here - https://gcr.io/argo-demo-314410/hello-go
 
 
 
 
-# H2 Credits
+# Credits
 The original app is based on an example by Jeff Geerling here - https://github.com/geerlingguy/ansible-for-kubernetes/tree/master/hello-go
