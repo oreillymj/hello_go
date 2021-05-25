@@ -70,9 +70,9 @@ In this example the docker image is deployed in ArgoCD from here - https://gcr.i
 
 
 # Helm Resources
-https://www.freecodecamp.org/news/helm-charts-tutorial-the-kubernetes-package-manager-explained/
-https://github.com/argoproj/argocd-example-apps/tree/master/helm-guestbook/
-https://www.baeldung.com/ops/kubernetes-helm/
+https://www.freecodecamp.org/news/helm-charts-tutorial-the-kubernetes-package-manager-explained/  
+https://github.com/argoproj/argocd-example-apps/tree/master/helm-guestbook/  
+https://www.baeldung.com/ops/kubernetes-helm/  
 
 
 # Credits
