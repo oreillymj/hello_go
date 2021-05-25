@@ -6,7 +6,7 @@ The repo also has sample Helm charts for deployment in Kubernetes primarily to t
 
 If you just want to build the go app then
 
-cd into cmd the use **go run** or **go build**
+cd into the **cmd** subdir, then use **go run** or **go build** to test the app.
 
 You can also build locally and test using docker desktop as follows.
 
